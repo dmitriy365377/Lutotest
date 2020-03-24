@@ -1,5 +1,4 @@
 http = require 'http'
-url = require 'url'
 
 expectedURL = ///
  ^/query/data/(\w+)/param/(\w+)$
@@ -23,9 +22,12 @@ response = (res, data) ->
 request = (req, res) ->
   params = req.url.match expectedURL
   unless params
+    console.error 404, req.url
     return response404 res, {error: 'entry point not found'}
   if params[2] is '404'
+    console.log 404, req.url
     return response404 res, {error: 'data is broken'}
+  console.log 200, req.url
   if params[1] is '1'
     return response res, [null, {v: 1}, {v: 4}, null]
   response res, [null, {v: 1}, {v: 4}, {v: 0}, null]
