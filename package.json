@@ -1,0 +1,20 @@
+{
+  "name": "lutotest",
+  "version": "0.0.0",
+  "description": "Всё крутится вокруг функции `requestData`. В коментариях написано что с ней надо сделать",
+  "main": "main.coffee",
+  "scripts": {
+    "start": "coffee main.coffee",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/E-geek/Lutotest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/E-geek/Lutotest/issues"
+  },
+  "homepage": "https://github.com/E-geek/Lutotest#readme"
+}
