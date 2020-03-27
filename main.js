@@ -1,6 +1,6 @@
 // Эта функция по идее должна быть импортирована,
 // но упрощено и нужно её простейшим образом реализовать
-const serverApiRequest = async a => {
+const serverApiRequest = a => {
   /*simulate request*/
   return fetch("//t.syshub.ru" + a);
 };
@@ -16,11 +16,11 @@ const sendAnalytics = (a, b) => {
     3 Подсветить места, где ТЗ недостаточно
     4 Подсветить места, вероятно проблемные
 */
-const requestData = async (/*{ id, param }*/) => {
+const requestData = (/*{ id, param }*/) => {
   // should return [null, {v: 1}, {v: 4}, null] or Error (may return array (null | {v: number})[])
-  var array = await serverApiRequest("/query/data/" + id + "/param/" + param);
+  var array = serverApiRequest("/query/data/" + id + "/param/" + param);
 
-  // after complete request if *not* Error returned
+  // after complete request if *not* Error call
   sendAnalytics("/requestDone", {
     type: "data",
     id: id,
